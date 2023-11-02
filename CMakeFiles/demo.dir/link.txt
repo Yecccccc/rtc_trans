@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11  CMakeFiles/demo.dir/recorder.cpp.o -o demo  -Wl,-rpath,/opt/ffmpeg/lib /opt/ffmpeg/lib/libavutil.so /opt/ffmpeg/lib/libswresample.so /opt/ffmpeg/lib/libavcodec.so /opt/ffmpeg/lib/libavfilter.so /opt/ffmpeg/lib/libswscale.so /opt/ffmpeg/lib/libavformat.so 
