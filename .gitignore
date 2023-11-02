@@ -4,5 +4,3 @@ cmake_install.cmake
 
 demo*
 
-psnr_rtc_1/
-

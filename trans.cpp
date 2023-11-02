@@ -126,11 +126,9 @@ int main() {
             data = new uint8_t[size];
             ifstream video;
             video.open(bin_path + "/" + to_string(timestamp) + ".bin");
-            // cout << bin_path + "/" + to_string(timestamp) + ".bin" << endl;
             video.read((char *)data, size);
             video.close();
             shared_ptr<Frame> tmpptr = make_shared<Frame> (data, size);
-            //cout << size << endl;
             tmpptr->is_key_frame = key_frame;
             tmpptr->timestamp = timestamp;
             if (falg == 0) {
@@ -142,6 +140,7 @@ int main() {
                 if (index == log_vec.size() - 1)
                     tmpptr->duration = 33;
                 else {
+                    // 由于timestamp 的单位问题，除以100
                     tmpptr->duration = log_vec[index + 1].timestamp - tmpptr->timestamp;
                     tmpptr->duration /= 100;
                 }
@@ -169,9 +168,7 @@ int main() {
             av_init_packet(&pkt);
             pkt.data = frame->payload;
             pkt.size = frame->length;
-            // cout << pkt.size << endl;
-            // pkt.dts = (int64_t)((frame->timestamp - timestamp_offset) /
-            //                     (av_q2d(stream->time_base) * 1000));
+            // 由于timestamp单位的问题，除以100
             pkt.dts = (int64_t)((frame->timestamp - timestamp_offset)/ 100 /
                                  (av_q2d(stream->time_base) * 1000));
             pkt.pts = pkt.dts;
