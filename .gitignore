@@ -4,3 +4,8 @@ cmake_install.cmake
 
 demo*
 
+recorderall
+
+Makefile
+
+./psnr_rtc_1/*.rgb
