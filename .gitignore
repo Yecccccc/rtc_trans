@@ -8,4 +8,6 @@ recorderall
 
 Makefile
 
-./psnr_rtc_1/*.rgb
+psnr_rtc_1/*.rgb
+
+psnr_rtc_1/*.yuv
