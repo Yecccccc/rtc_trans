@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.4.1)
+project(demo_yec_trans)
 set(ffmpeg_lib_dir /opt/ffmpeg/lib)
 set(ffmpeg_head_dir /opt/ffmpeg/include)
 SET( CMAKE_CXX_FLAGS "-std=c++11 ")
@@ -53,9 +54,9 @@ set_target_properties( avformat
 include_directories(${ffmpeg_head_dir}/include)
 
 
-add_executable(demo_yec trans.cpp)
+add_executable(trans trans.cpp)
 target_link_libraries(
-        demo_yec
+        trans
         avutil
         swresample
         avcodec

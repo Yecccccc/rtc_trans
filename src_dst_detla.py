@@ -1,7 +1,13 @@
-ts1 = 1613014572
-ts2 = 2466985560
-detla = ts1 - ts2
-with open("./psnr_rtc_1/receiver_frame.txt", "r") as file:
+# 初始配置，设置为sender_frame.txt和receiver_frame.txt的开始时间戳
+ts_receiver = 2161275847
+ts_sender = 3548078114
+# 设置为receiver_frame.txt的结束时间戳
+ts_receiver_end = 2166621577
+detla = ts_receiver - ts_sender
+
+labname = "psnr_rtc_2"
+
+with open("./" + labname + "/receiver_frame.txt", "r") as file:
     content = file.read()
 lines = content.split("\n")
 gopstart = 0
@@ -32,14 +38,14 @@ for i in range(len(lines)):
             i += 1
 file.close()
 
-goplist.append([gopstart, 1618240422 - detla + 1])
+goplist.append([gopstart, ts_receiver_end - detla + 1])
 
-with open("./psnr_rtc_1/sender_frame.txt", "r") as file:
+with open("./" + labname + "/sender_frame.txt", "r") as file:
     content = file.read()
 lines = content.split("\n")
 # 记录每个gop的index
 
-with open("./psnr_rtc_1/gop.txt", "w") as f:
+with open("./" + labname + "/gop.txt", "w") as f:
     gop_no = 0
     f.write("gop" + str(gop_no + 1) + ":" + "width=" + str(width_list[gop_no]) + ",height=" + str(height_list[gop_no]) + "\n")
     ts = 0

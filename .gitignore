@@ -4,10 +4,22 @@ cmake_install.cmake
 
 demo*
 
-recorderall
-
 Makefile
 
-psnr_rtc_1/*.rgb
+psnr_rtc_*/*.rgb
 
-psnr_rtc_1/*.yuv
+psnr_rtc_*/*.yuv
+
+psnr_rtc_*/frame/
+
+.vscode/
+
+CMakeCache/
+
+CMakeFiles/
+
+trans
+
+recorder*
+
+test.cpp

@@ -68,7 +68,7 @@
     - 根据第5步获取到的yuv文件利用ffmpeg恢复成rgb
 
       ```
-      ffmpeg -s width x height -i demo.yuv -vf "format=rgb24" rgb24
+      ffmpeg -s width x height -i demo.yuv -vf "format=rgb24" gopx.rgb
       ```
 
     - cal_psnr.py负责计算每个gop的psnr，首先需要对目标帧进行插值，最后计算MSE，计算PSNR，保存在gopx_psnr.txt里

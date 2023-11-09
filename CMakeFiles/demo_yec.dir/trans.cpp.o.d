@@ -1,5 +1,6 @@
-CMakeFiles/demo_yec.dir/trans.cpp.o: /home/yec/Desktop/mycode/trans.cpp \
- /usr/include/stdc-predef.h /usr/include/stdio.h \
+CMakeFiles/demo_yec.dir/trans.cpp.o: \
+ /home/yec/Desktop/rtc_trans/trans.cpp /usr/include/stdc-predef.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -208,7 +209,7 @@ CMakeFiles/demo_yec.dir/trans.cpp.o: /home/yec/Desktop/mycode/trans.cpp \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc /home/yec/Desktop/mycode/webrtc.h \
+ /usr/include/c++/9/bits/istream.tcc /home/yec/Desktop/rtc_trans/webrtc.h \
  /usr/include/c++/9/queue /usr/include/c++/9/deque \
  /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h \

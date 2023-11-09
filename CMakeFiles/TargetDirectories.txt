@@ -1,3 +1,3 @@
-/home/yec/Desktop/mycode/CMakeFiles/demo_yec.dir
-/home/yec/Desktop/mycode/CMakeFiles/edit_cache.dir
-/home/yec/Desktop/mycode/CMakeFiles/rebuild_cache.dir
+/home/yec/Desktop/rtc_trans/CMakeFiles/trans.dir
+/home/yec/Desktop/rtc_trans/CMakeFiles/edit_cache.dir
+/home/yec/Desktop/rtc_trans/CMakeFiles/rebuild_cache.dir

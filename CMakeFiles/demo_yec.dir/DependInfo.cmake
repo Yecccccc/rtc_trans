@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/yec/Desktop/mycode/trans.cpp" "CMakeFiles/demo_yec.dir/trans.cpp.o" "gcc" "CMakeFiles/demo_yec.dir/trans.cpp.o.d"
+  "/home/yec/Desktop/rtc_trans/trans.cpp" "CMakeFiles/demo_yec.dir/trans.cpp.o" "gcc" "CMakeFiles/demo_yec.dir/trans.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

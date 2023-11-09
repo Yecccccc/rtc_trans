@@ -54,16 +54,16 @@ RM = /home/yec/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yec/Desktop/mycode
+CMAKE_SOURCE_DIR = /home/yec/Desktop/rtc_trans
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yec/Desktop/mycode
+CMAKE_BINARY_DIR = /home/yec/Desktop/rtc_trans
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/demo_yec.dir/all
+all: CMakeFiles/trans.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/demo_yec.dir/clean
+clean: CMakeFiles/trans.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/demo_yec.dir
+# Target rules for target CMakeFiles/trans.dir
 
 # All Build rule for target.
-CMakeFiles/demo_yec.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_yec.dir/build.make CMakeFiles/demo_yec.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_yec.dir/build.make CMakeFiles/demo_yec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yec/Desktop/mycode/CMakeFiles --progress-num=1,2 "Built target demo_yec"
-.PHONY : CMakeFiles/demo_yec.dir/all
+CMakeFiles/trans.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trans.dir/build.make CMakeFiles/trans.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trans.dir/build.make CMakeFiles/trans.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yec/Desktop/rtc_trans/CMakeFiles --progress-num=1,2 "Built target trans"
+.PHONY : CMakeFiles/trans.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/demo_yec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yec/Desktop/mycode/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_yec.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yec/Desktop/mycode/CMakeFiles 0
-.PHONY : CMakeFiles/demo_yec.dir/rule
+CMakeFiles/trans.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yec/Desktop/rtc_trans/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/trans.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yec/Desktop/rtc_trans/CMakeFiles 0
+.PHONY : CMakeFiles/trans.dir/rule
 
 # Convenience name for target.
-demo_yec: CMakeFiles/demo_yec.dir/rule
-.PHONY : demo_yec
+trans: CMakeFiles/trans.dir/rule
+.PHONY : trans
 
 # clean rule for target.
-CMakeFiles/demo_yec.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_yec.dir/build.make CMakeFiles/demo_yec.dir/clean
-.PHONY : CMakeFiles/demo_yec.dir/clean
+CMakeFiles/trans.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trans.dir/build.make CMakeFiles/trans.dir/clean
+.PHONY : CMakeFiles/trans.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -18,11 +18,11 @@ using namespace std;
 AVCodecID video_codec_id = AV_CODEC_ID_VP8;
 
 // 存放raw data
-string bin_path = "./psnr_rtc_1/frame";
+string bin_path = "./psnr_rtc_2/frame";
 // 记录接收方收到的帧信息
-string receiver_txt_path = "./psnr_rtc_1/receiver_frame.txt";
+string receiver_txt_path = "./psnr_rtc_2/receiver_frame.txt";
 // 输出路径
-string outpath = "./psnr_rtc_1/";
+string outpath = "./psnr_rtc_2/";
 // gop_num
 int gop_num = 1;
 int main() {
@@ -44,13 +44,13 @@ int main() {
             temp.clear();
         }
         else if (line.find("timestamp=") != string::npos) {
-            temp.timestamp = stoi(line.substr(line.find("=") + 1));
+            temp.timestamp = stoll(line.substr(line.find("=") + 1));
         }
         else if (line.find("frame_size=") != std::string::npos) {
             temp.frame_size = stoi(line.substr(line.find("=") + 1));
         }
         else if (line.find("key_frame=") != std::string::npos) {
-            temp.key_frame = std::stoi(line.substr(line.find("=") + 1));
+            temp.key_frame = stoi(line.substr(line.find("=") + 1));
         } 
         else if (line.find("encoded_width=") != std::string::npos) {
             // stoi直接截断了后面
@@ -120,7 +120,7 @@ int main() {
         int height = log_vec[index].encoded_heigt;
         while (index < log_vec.size() && (falg == 1 || log_vec[index].key_frame == false)) {
             uint8_t* data = nullptr;
-            int timestamp =log_vec[index].timestamp;
+            int64_t timestamp =log_vec[index].timestamp;
             int size = log_vec[index].frame_size;
             bool key_frame = log_vec[index].key_frame;
             data = new uint8_t[size];

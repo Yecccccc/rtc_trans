@@ -1,6 +1,9 @@
+from traceback import FrameSummary
 import cv2
 import numpy as np
-gop_num = 4
+# 初始配置
+gop_num = 2
+labname = "psnr_rtc_2"
 
 # 定义函数计算 PSNR
 def calculate_psnr(img1, img2):
@@ -11,9 +14,9 @@ def calculate_psnr(img1, img2):
     psnr = 10 * np.log10((max_pixel ** 2) / mse)
     return psnr
 
-file_dst = "./psnr_rtc_1/gop" + str(gop_num) + ".rgb"
-file_src = "/home/yec/Desktop/video/bbb.rgb"
-index_file = "./psnr_rtc_1/gop.txt"
+file_dst = "./" + labname + "/gop" + str(gop_num) + ".rgb"
+file_src = "/home/yec/Desktop/video/bbb_gbr.rgb"
+index_file = "./" + labname + "/gop.txt"
 
 index_list = []
 width = 0
@@ -38,7 +41,7 @@ src_length = 1920 * 1080 * 3
 dst_length = width * height * 3
 f_src = open(file_src, 'rb')
 f_dst = open(file_dst, 'rb')
-f_psnr = open("./psnr_rtc_1/gop" + str(gop_num) + "_psnr.txt", 'w')
+f_psnr = open("./" + labname + "/gop" + str(gop_num) + "_psnr.txt", 'w')
 total_psnr = 0
 for i in range(len(index_list)):
     offset_src = 1920 * 1080 * 3 * (index_list[i] % 900)
@@ -46,17 +49,23 @@ for i in range(len(index_list)):
     frame_src = np.fromfile(f_src, dtype=np.uint8, count=src_length)
     frame_src = frame_src.astype(np.float32)
     frame_src = frame_src.reshape(1080, 1920, 3)
-    # cv2.imwrite('./pic/src' + str(i) + ".jpeg", frame_src)
+    # webrtc输入端是bgr，导致输入端r和b颠倒，所以添加下面一行
+    # 这里是接收方转换颜色空间，下面一行用于bgr转换为rgb
+    frame_src = frame_src[:, :, ::-1]
+    # 测试，观察帧是否对应的上
+    if i == 300:
+        cv2.imwrite('./pic/src' + str(i) + ".jpeg", frame_src)
     offset_dst = width * height * 3 * i
     f_dst.seek(offset_dst, 0)
     frame_dst = np.fromfile(f_dst, dtype=np.uint8, count=dst_length)
     frame_dst = frame_dst.astype(np.float32)
     frame_dst = frame_dst.reshape(height, width, 3)
     # webrtc输入端是rgb，导致播放端r和b颠倒，所以添加下面一行
-    # 下面一行用于bgr转换为rgb
-    frame_dst = frame_dst[:, :, ::-1]
-
-    # cv2.imwrite('./pic/dst' + str(i) + ".jpeg", frame_dst)
+    # 这里是接收方转换颜色空间，下面一行用于bgr转换为rgb
+    # frame_dst = frame_dst[:, :, ::-1]
+    # 测试，观察帧是否对应的上
+    if i == 300:
+        cv2.imwrite('./pic/dst' + str(i) + ".jpeg", frame_dst)
     # 插值
     frame_dst = cv2.resize(frame_dst, (frame_src.shape[1], frame_src.shape[0]), interpolation=cv2.INTER_LINEAR)
 
